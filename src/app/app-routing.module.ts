@@ -6,7 +6,7 @@ const routes: Routes = [
   {
     path: '', component: LayoutComponent,
     children: [
-      { path: '', redirectTo: '/login', pathMatch: 'full' },
+      { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: 'home', loadChildren: () => import('./pages/veicle-group/veicule-group.module').then(r => r.VeiculeGroupModule) },
       { path: 'agendamento', loadChildren: () => import('./pages/reserve-veicle/reserve-veicle.module').then(r => r.ReserveVeicleModule) },
       { path: 'reserva', loadChildren: () => import('./pages/available-veicle/available-veicle.module').then(r => r.AvailableVeicleModule) },

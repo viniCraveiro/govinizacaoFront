@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
+import { MatButtonModule } from '@angular/material/button';
 import { NotfoundRoutingModule } from './notfound-routing.module';
 
 
@@ -8,7 +9,8 @@ import { NotfoundRoutingModule } from './notfound-routing.module';
   declarations: [],
   imports: [
     CommonModule,
-    NotfoundRoutingModule
+    NotfoundRoutingModule,
+    MatButtonModule
   ]
 })
 export class NotfoundModule { }

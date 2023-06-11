@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RegisterRoutingModule } from './register-routing.module';
 import { VeicleComponent } from './veicle/veicle.component';
 import { UserComponent } from './user/user.component';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -13,7 +14,9 @@ import { UserComponent } from './user/user.component';
   ],
   imports: [
     CommonModule,
-    RegisterRoutingModule
+    RegisterRoutingModule,
+    MatButtonModule
+
   ]
 })
 export class RegisterModule { }

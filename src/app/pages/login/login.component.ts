@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import { LoginService } from './login.service';
+
+export default interface ILogin {
+  cpf: string,
+  senha: string
+}
 
 @Component({
   selector: 'app-login',
@@ -6,5 +12,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+
+  login: ILogin = { cpf: '1010', senha: '12345' };
+  public logado: boolean = false;
+  constructor(private loginService: LoginService) { }
+
+  ngOnInit(): void {
+    this.logar(this.login)
+  }
+
+  logar(login: ILogin) {
+    this.loginService.login(login).subscribe({
+      next: value => {
+        this.logado = value;
+        console.log(value);
+        console.log(login);
+
+      }
+    })
+  }
 
 }
