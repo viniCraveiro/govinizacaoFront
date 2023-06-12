@@ -18,15 +18,15 @@ export class LoginComponent {
   constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
-    this.logar(this.login)
+    this.logar()
   }
 
-  logar(login: ILogin) {
-    this.loginService.login(login).subscribe({
+  logar() {
+    this.loginService.login(this.login).subscribe({
       next: value => {
         this.logado = value;
         console.log(value);
-        console.log(login);
+        console.log(this.login);
 
       }
     })

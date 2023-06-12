@@ -1,2 +1,32 @@
-<p>login works!</p>
-<button routerLink="/home" type="button">Voltar</button>
+<div class="container">
+  <div class="form-image">
+    <img src="../../../assets/backgroud.svg" alt="Maringa">
+  </div>
+  <div class="form">
+    <form action="" (submit)="logar()">
+      <div class="form-header">
+        <div class="title">
+          <h1>Login</h1>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <div class="input-container">
+          <input placeholder="Digite seu CPF" class="input-field" type="text" required>
+          <label for="input-field" class="input-label">CPF:</label>
+          <span class="input-highlight"></span>
+        </div>
+        <div class="input-container">
+          <input placeholder="Digite sua senha" class="input-field" type="password">
+          <label for="input-field" class="input-label">Senha:</label>
+          <span class="input-highlight"></span>
+        </div>
+
+
+      </div>
+      <div>
+        <button type="submit">Entrar</button>
+      </div>
+    </form>
+  </div>
+</div>
