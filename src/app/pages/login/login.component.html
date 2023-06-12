@@ -3,7 +3,7 @@
     <img src="../../../assets/backgroud.svg" alt="Maringa">
   </div>
   <div class="form">
-    <form action="" (submit)="logar()">
+    <form formGroup="formLogin">
       <div class="form-header">
         <div class="title">
           <h1>Login</h1>
@@ -12,7 +12,7 @@
 
       <div class="input-group">
         <div class="input-container">
-          <input placeholder="Digite seu CPF" class="input-field" type="text" required>
+          <input placeholder="Digite seu CPF" class="input-field" type="text">
           <label for="input-field" class="input-label">CPF:</label>
           <span class="input-highlight"></span>
         </div>
@@ -22,11 +22,10 @@
           <span class="input-highlight"></span>
         </div>
 
-
       </div>
       <div style="text-align: center;">
-        <button type="submit">Entrar</button>
+        <button (click)="logar()">Entrar</button>
       </div>
     </form>
-  </div>
+    </div>
 </div>
