@@ -29,11 +29,10 @@ export class LoginComponent {
   }
 
   logar() {
-    console.log(this.formLogin.getRawValue());
-    this.loginService.login(this.login).subscribe({
+    this.loginService.login(this.formLogin.getRawValue()).subscribe({
       next: value => {
         this.logado = value;
-        if (this.logado === true) {
+        if (!this.formLogin.errors && this.logado === true) {
           this.router.navigate(['/home']);
         } else {
           console.log('Usuario ou senha incorreto !');

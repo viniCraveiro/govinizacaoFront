@@ -6,10 +6,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginService } from './login.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    LoginComponent
+  ],
   imports: [
     CommonModule,
     LoginRoutingModule,

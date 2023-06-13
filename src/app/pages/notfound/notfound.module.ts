@@ -3,10 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { MatButtonModule } from '@angular/material/button';
 import { NotfoundRoutingModule } from './notfound-routing.module';
+import { NotfoundComponent } from './notfound.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    NotfoundComponent
+  ],
   imports: [
     CommonModule,
     NotfoundRoutingModule,

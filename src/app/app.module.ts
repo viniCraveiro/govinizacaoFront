@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,6 @@ import { RouterModule } from '@angular/router';
     AppRoutingModule,
     LayoutModule,
     BrowserAnimationsModule,
-    MatButtonModule,
     RouterModule,
   ],
   providers: [
