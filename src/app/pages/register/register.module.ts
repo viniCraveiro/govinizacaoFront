@@ -1,10 +1,16 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
-import { RegisterRoutingModule } from './register-routing.module';
-import { VeicleComponent } from './veicle/veicle.component';
-import { UserComponent } from './user/user.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { RegisterRoutingModule } from './register-routing.module';
+import { UserComponent } from './user/user.component';
+import { VeicleComponent } from './veicle/veicle.component';
+import { MatCardModule } from '@angular/material/card';
+
+
 
 
 @NgModule({
@@ -15,7 +21,11 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [
     CommonModule,
     RegisterRoutingModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatCardModule
 
   ]
 })

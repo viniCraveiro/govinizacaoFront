@@ -1,1 +1,56 @@
-<p>Deve ser a tela de cadastro de usuario</p>
+<form [formGroup]="form">
+  <mat-card>
+    <mat-form-field>
+      <mat-label>Nome</mat-label>
+      <input type="text" matInput formControlName="nome">
+      <mat-error *ngIf="form.controls['nome'].hasError('required')">
+        O campo é obrigatorio
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>CPF</mat-label>
+      <input type="text" matInput formControlName="cpf">
+      <mat-error *ngIf="form.controls['cpf'].hasError('required')">
+        O campo é obrigatorio
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Senha</mat-label>
+      <input type="text" matInput formControlName="senha">
+      <mat-error *ngIf="form.controls['senha'].hasError('required')">
+        O campo é obrigatorio
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>CNH</mat-label>
+      <input type="text" matInput formControlName="cnh">
+      <mat-error *ngIf="form.controls['cnh'].hasError('required')">
+        O campo é obrigatorio
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Classificacao</mat-label>
+      <mat-select formControlName="classificacao" name="food">
+        <mat-option *ngFor="let classificacao of classificacao" [value]="classificacao">
+          {{classificacao}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Categoria de CNH:</mat-label>
+      <mat-select formControlName="cnh" multiple>
+        <mat-select-trigger>
+          {{form.get('cnh')?.value}}
+        </mat-select-trigger>
+        <mat-option *ngFor="let cnh of cnhList" [value]="cnh">{{cnh}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </mat-card>
+
+</form>

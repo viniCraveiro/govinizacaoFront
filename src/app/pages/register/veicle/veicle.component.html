@@ -1,1 +1,96 @@
-<p>veicle works!</p>
+<form [formGroup]="form">
+  <mat-card>
+
+    <mat-form-field>
+      <mat-label>Placa</mat-label>
+      <input type="text" matInput formControlName="placa">
+      <mat-error *ngIf="form.controls['placa'].hasError('required')">
+        O campo é obrigatorio
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Quilometragem</mat-label>
+      <input type="text" matInput formControlName="quilometragem">
+      <mat-error *ngIf="form.controls['quilometragem'].hasError('required')">
+        O campo é obrigatorio
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Renavam</mat-label>
+      <input type="text" matInput formControlName="renavam">
+      <mat-error *ngIf="form.controls['renavam'].hasError('required')">
+        O campo é obrigatorio
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Chassi</mat-label>
+      <input type="text" matInput formControlName="chassi">
+      <mat-error *ngIf="form.controls['chassi'].hasError('required')">
+        O campo é obrigatorio
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Cor</mat-label>
+      <input type="text" matInput formControlName="cor">
+      <mat-error *ngIf="form.controls['cor'].hasError('required')">
+        O campo é obrigatorio
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Ano</mat-label>
+      <input type="text" matInput formControlName="ano">
+      <mat-error *ngIf="form.controls['ano'].hasError('required')">
+        O campo é obrigatorio
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Modelo</mat-label>
+      <input type="text" matInput formControlName="modelo">
+      <mat-error *ngIf="form.controls['modelo'].hasError('required')">
+        O campo é obrigatorio
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Marca</mat-label>
+      <input type="text" matInput formControlName="marca">
+      <mat-error *ngIf="form.controls['marca'].hasError('required')">
+        O campo é obrigatorio
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Tipo de veiculo</mat-label>
+      <input type="text" matInput formControlName="tipoVeiculo">
+      <mat-error *ngIf="form.controls['tipoVeiculo'].hasError('required')">
+        O campo é obrigatorio
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Categoria de CNH:</mat-label>
+      <mat-select formControlName="categoriaCnh" multiple>
+        <mat-select-trigger>
+          {{form.get('categoriaCnh')?.value}}
+        </mat-select-trigger>
+        <mat-option *ngFor="let cnh of cnhList" [value]="cnh">{{cnh}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Status:</mat-label>
+      <mat-select formControlName="statusVeiculo" name="status">
+        <mat-option *ngFor="let item of status" [value]="item">
+          {{item}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </mat-card>
+</form>
