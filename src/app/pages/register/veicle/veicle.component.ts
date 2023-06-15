@@ -28,6 +28,4 @@ export class VeicleComponent implements OnInit {
     })
   }
 
-
-
 }
