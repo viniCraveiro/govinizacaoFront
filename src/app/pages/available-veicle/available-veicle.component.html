@@ -1,110 +1,20 @@
-<div class="container">
-  <div>
-    <mat-card class="example-card">
-      <mat-card-header>
-        <mat-card-title>Compactos</mat-card-title>
-      </mat-card-header>
-      <img mat-card-image src="../../../assets/carros/carro.png" alt="Carro">
-      <mat-card-content>
-        <p>
-          Veiculos pequenos/medios para uso diario
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button color="primary">Consultar</button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
+<form [formGroup]="form">
 
-  <div>
-    <mat-card class="example-card">
-      <mat-card-header>
-        <mat-card-title>Utilitarios</mat-card-title>
-      </mat-card-header>
-      <img mat-card-image src="../../../assets/carros/utilitario.png" alt="Utilitarios">
-      <mat-card-content>
-        <p>
-          Veiculos medios para uso em transportes
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button color="primary">Consultar</button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
+  <mat-form-field class="example-full-width">
+    <mat-label>Data de locação</mat-label>
+    <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="locacao" formControlName="dataLocacao">
+    <mat-hint>DD/MM/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="locacao"></mat-datepicker-toggle>
+    <mat-datepicker #locacao></mat-datepicker>
+  </mat-form-field>
 
-  <div>
-    <mat-card class="example-card">
-      <mat-card-header>
-        <mat-card-title>Ônibus</mat-card-title>
-      </mat-card-header>
-      <img mat-card-image src="../../../assets/carros/onibus.png" alt="Ônibus">
-      <mat-card-content>
-        <p>
-          Veiculos grandes para transporte coletivo
-        </p>
-      </mat-card-content>
-      <div class="center">
-        <mat-card-actions>
-          <button mat-raised-button color="primary">Consultar</button>
-        </mat-card-actions>
-      </div>
-    </mat-card>
-  </div>
-</div>
+  <mat-form-field class="example-full-width">
+    <mat-label>Data de devolução</mat-label>
+    <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="devolucao" formControlName="dataDevolucao">
+    <mat-hint>DD/MM/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="devolucao"></mat-datepicker-toggle>
+    <mat-datepicker #devolucao></mat-datepicker>
+  </mat-form-field>
 
 
-<div class="container">
-  <div>
-    <mat-card class="example-card">
-      <mat-card-header>
-        <mat-card-title>Limpeza Urbana</mat-card-title>
-      </mat-card-header>
-      <img mat-card-image src="../../../assets/carros/limpezaUrbana.png" alt="Limpeza Urbana">
-      <mat-card-content>
-        <p>
-          Veiculos grandes realizar a limpeza urbana nas ruas.
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button color="primary">Consultar</button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
-
-  <div>
-    <mat-card class="example-card">
-      <mat-card-header>
-        <mat-card-title>Caminhões</mat-card-title>
-      </mat-card-header>
-      <img mat-card-image src="../../../assets/carros/caminhao.png" alt="Caminhões">
-      <mat-card-content>
-        <p>
-          Veiculos pequenos/medios para uso diario.
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button color="primary">Consultar</button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
-
-  <div>
-    <mat-card class="example-card">
-      <mat-card-header>
-        <mat-card-title>Equipamentos pesados</mat-card-title>
-      </mat-card-header>
-      <img mat-card-image src="../../../assets/carros/equipamentoPesado.png" alt="Equipamentos Pesados">
-      <mat-card-content>
-        <p>
-          Equipamentos ideias para obras de construção ou similares
-        </p>
-      </mat-card-content>
-      <div class="center">
-        <mat-card-actions>
-          <button mat-raised-button color="primary">Consultar</button>
-        </mat-card-actions>
-      </div>
-    </mat-card>
-  </div>
-</div>
+</form>
