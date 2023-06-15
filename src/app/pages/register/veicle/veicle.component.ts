@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { RegisterService } from '../register.service';
 
 @Component({
   selector: 'app-veicle',
@@ -8,10 +10,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class VeicleComponent implements OnInit {
   form!: FormGroup;
-  cnhList: Array<string> = ["A","B","C","D","E"]
-  status: Array<string> = ["Disponivel","Alugado","Manutenção","Bloqueado"]
+  cnhList: Array<string> = ["A", "B", "C", "D", "E"]
+  status: Array<string> = ["Disponivel", "Alugado", "Manutenção", "Bloqueado"]
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private registerService: RegisterService, private snackBar: MatSnackBar) { }
   ngOnInit(): void {
     this.form = this.fb.group({
       placa: this.fb.control('', Validators.required),
@@ -25,6 +27,17 @@ export class VeicleComponent implements OnInit {
       tipoVeiculo: this.fb.control('', Validators.required),
       categoriaCnh: this.fb.control('', Validators.required),
       statusVeiculo: this.fb.control('', Validators.required),
+    })
+  }
+
+  save() {
+    if (!this.form.valid) return;
+    this.registerService.createVeicle(this.form.getRawValue()).subscribe({
+      next: () =>
+        this.snackBar.open('Cadastrado com sucesso', 'Fechar'),
+      error: (er: Error) => {
+        this.snackBar.open('Erro ao salvar.', 'Fechar');
+      }
     })
   }
 

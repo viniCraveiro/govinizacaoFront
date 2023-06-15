@@ -12,6 +12,10 @@ import { AvailableVeicleComponent } from './available-veicle.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { MomentDateModule } from '@angular/material-moment-adapter';
+import { HttpClientModule } from '@angular/common/http';
+import { AvailableVeicleService } from './available-veicle.service';
+import {MatTableModule} from '@angular/material/table';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +24,7 @@ import { MomentDateModule } from '@angular/material-moment-adapter';
   imports: [
     CommonModule,
     AvailableVeicleRoutingModule,
+    HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
     MatCardModule,
@@ -29,6 +34,9 @@ import { MomentDateModule } from '@angular/material-moment-adapter';
     MatFormFieldModule,
     MatInputModule,
     MomentDateModule,
-  ]
+    MatTableModule,
+
+  ],
+  providers: [AvailableVeicleService]
 })
 export class AvailableVeicleModule { }

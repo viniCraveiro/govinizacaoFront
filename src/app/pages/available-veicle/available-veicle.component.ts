@@ -5,6 +5,8 @@ import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { Moment } from 'moment';
+import { IVeicle } from '../register/veicle/veicle';
+import { AvailableVeicleService } from './available-veicle.service';
 
 export const MY_FORMATS = {
   parse: {
@@ -30,7 +32,11 @@ export class AvailableVeicleComponent implements OnInit {
   form!: FormGroup
   minDate: Date;
   maxDate: Date;
-  constructor(private fb: FormBuilder) {
+  displayedColumns: string[] = ['placa', 'Marca', 'Modelo', 'Ano','Tipo','Categoria' ,'Status'];
+  columnsToDisplay: string[] = this.displayedColumns.slice();
+
+  veiculosDisponiveis: Array<IVeicle> = [];
+  constructor(private fb: FormBuilder, private availableService: AvailableVeicleService) {
     this.minDate = new Date(Date.now() - 20, 0, 1);
     this.maxDate = new Date(Date.now() + 1, 11, 31);
   }
@@ -48,6 +54,18 @@ export class AvailableVeicleComponent implements OnInit {
   onDateChange(event: MatDatepickerInputEvent<Moment>) {
     const selectedDate = event.value;
     // Lógica para manipular a data selecionada
+  }
+
+  getVeicleDisponible() {
+    this.availableService.getVeicleDisponible().subscribe({
+      next: value => {
+        Object.assign(this.veiculosDisponiveis, value);
+        console.log(this.veiculosDisponiveis);
+      },
+      error: (er: Error) => {
+        console.log(er);
+      }
+    })
   }
 
 }

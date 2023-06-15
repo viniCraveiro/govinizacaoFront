@@ -1,4 +1,6 @@
-<form [formGroup]="form">
+<h2 style="text-align: center; padding: 1.5rem;">Cadastro de Veículo</h2>
+
+<form [formGroup]="form" (submit)="save()">
   <mat-card>
 
     <mat-form-field>
@@ -75,7 +77,7 @@
 
     <mat-form-field>
       <mat-label>Categoria de CNH:</mat-label>
-      <mat-select formControlName="categoriaCnh" multiple>
+      <mat-select formControlName="categoriaCnh">
         <mat-select-trigger>
           {{form.get('categoriaCnh')?.value}}
         </mat-select-trigger>
@@ -93,4 +95,5 @@
     </mat-form-field>
 
   </mat-card>
+  <button type="submit" mat-raised-button color="primary">Salvar</button>
 </form>
